@@ -1,5 +1,5 @@
 ﻿; Phím tắt để ẩn/hiện biểu tượng Microsoft Edge trong chế độ app cho URL chatgpt.com
-^!e:: ; Ctrl + Alt + E để ẩn/hiện
+^!h:: ; Ctrl + Alt + h để ẩn/hiện
     WinGet, edgeID, List, ahk_exe msedge.exe
     Loop, %edgeID%
     {
@@ -30,10 +30,22 @@ return
         Sleep, 1000
         ; Lấy ID của cửa sổ vừa mở
         WinWait, ChatGPT
-        ; Đặt kích thước cửa sổ
-        WinMove, ChatGPT,, 0, 0, 300, 200 ; Thay đổi kích thước và vị trí theo ý muốn
+        
+	 ; Kích thước cửa sổ
+        width := 300
+        height := 200
+        
+        ; Đặt vị trí cửa sổ ở giữa theo chiều ngang và dưới cùng theo chiều dọc
+        ScreenWidth := A_ScreenWidth
+        ScreenHeight := A_ScreenHeight
+        x := (ScreenWidth - width) // 2 ; Tính vị trí x để căn giữa
+        y := ScreenHeight - height ; Đặt vị trí y ở dưới cùng
+        
+        ; Đặt kích thước và vị trí cửa sổ
+        WinMove, ChatGPT,, x, y-30, width, height
+
         ; Đặt độ mờ cửa sổ ban đầu (10%)
-        global opacity := 230
+        global opacity := 50
         WinSet, Transparent, %opacity%, ChatGPT
         WinHide, ChatGPT ; Ẩn cửa sổ ngay sau khi mở
     }
@@ -46,19 +58,19 @@ return
 
 
 ; Tăng độ trong suốt thêm 5% bằng Shift + 1
-+1::
+!q::
     if (opacity > 0) ; Giới hạn ở mức 100% trong suốt
     {
-        opacity -= 13 ; Giảm giá trị opacity để tăng độ trong suốt (5% ~ 13 đơn vị)
+        opacity -= 10 ; Giảm giá trị opacity để tăng độ trong suốt (5% ~ 13 đơn vị)
         WinSet, Transparent, %opacity%, ChatGPT
     }
 return
 
 ; Giảm độ trong suốt 5% bằng Shift + 2
-+2::
+!w::
     if (opacity < 255) ; Giới hạn ở mức 0% trong suốt
     {
-        opacity += 13 ; Tăng giá trị opacity để giảm độ trong suốt (5% ~ 13 đơn vị)
+        opacity += 10 ; Tăng giá trị opacity để giảm độ trong suốt (5% ~ 13 đơn vị)
         WinSet, Transparent, %opacity%, ChatGPT
     }
 
@@ -77,7 +89,7 @@ return
 chatGPTHidden := false
 
 ; Phím tắt để ẩn/hiện cửa sổ ChatGPT khi nhấn ALT + L
-!l:: ; ALT + L để ẩn/hiện
+!l:: ; ALT + l để ẩn/hiện
     if chatGPTHidden
     {
         WinShow, ChatGPT ; Hiển thị lại cửa sổ
@@ -90,4 +102,7 @@ chatGPTHidden := false
         chatGPTHidden := true ; Cập nhật trạng thái
     }
 return
+
+#NoTrayIcon
+
 

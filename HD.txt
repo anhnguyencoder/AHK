@@ -1,0 +1,3 @@
+ctrl alt c	new chat
+ctrl alt h	hide icon on taskbar
+alt q,alt w change opacity
