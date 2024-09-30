@@ -1,4 +1,6 @@
-﻿; Phím tắt để ẩn/hiện biểu tượng Microsoft Edge trong chế độ app cho URL chatgpt.com
+﻿#NoTrayIcon
+
+; Phím tắt để ẩn/hiện biểu tượng Microsoft Edge trong chế độ app cho URL chatgpt.com
 ^!h:: ; Ctrl + Alt + h để ẩn/hiện
     WinGet, edgeID, List, ahk_exe msedge.exe
     Loop, %edgeID%
@@ -103,6 +105,33 @@ chatGPTHidden := false
     }
 return
 
-#NoTrayIcon
 
 
+
+
+
+
+
+!o:: ; Alt + O để sao chép
+    Send, ^c ; Ctrl + C để sao chép
+return
+
+!p:: ; Alt + P để dán
+    Send, ^v ; Ctrl + V để dán
+return
+
+
+; Script để nhấp chuột vào vị trí (1200, 130) ngay lập tức khi nhấn Alt + S
+!s::
+{
+    ; Lưu vị trí chuột hiện tại
+    MouseGetPos, originalX, originalY
+
+    ; Di chuyển chuột đến vị trí cụ thể và nhấp chuột
+    MouseMove, 1200, 130 
+    Click
+
+    ; Quay trở lại vị trí ban đầu
+    MouseMove, originalX, originalY  
+}
+return

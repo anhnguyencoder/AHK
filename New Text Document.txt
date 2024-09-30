@@ -1,0 +1,1 @@
+javascript:(function() {  const style = document.createElement('style');  style.textContent = `    ::selection {      background: yellow;      color: red;    }  `;  document.head.appendChild(style);})();
