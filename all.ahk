@@ -131,6 +131,8 @@ return
 ; Biến trạng thái cửa sổ ChatGPT
 chatGPTHidden := false
 
+
+
 ; Phím tắt để ẩn/hiện cửa sổ ChatGPT khi nhấn ALT + L
 !l:: ; ALT + l để ẩn/hiện
     if chatGPTHidden
@@ -217,13 +219,13 @@ return
 ; Phím tắt để mở STT ở chế độ app mode với độ mờ 10%
 ^!s:: ; Ctrl + Alt + S để mở STT
     ; Kiểm tra xem cửa sổ STT đã tồn tại chưa
-    if !WinExist("STT") ; Kiểm tra tiêu đề cửa sổ
+    if !WinExist("STT") ; Kiểm tra tiêu đề cửa sổ STT
     {
         Run, "C:\Users\anhnguyencoder\AppData\Local\Programs\Python\Python312\pythonw.exe" "D:\GitHub\Speech-To-Text\latest version\app.py", , Hide
         ; Chờ một chút để cửa sổ mở
         Sleep, 1000
-        ; Lấy ID của cửa sổ vừa mở
-        WinWait, ahk_class TkTopLevel ; Chờ cho cửa sổ STT mở
+        ; Lấy ID của cửa sổ STT dựa vào tiêu đề
+        WinWait, STT
         
         ; Kích thước cửa sổ
         width := 150
@@ -236,12 +238,12 @@ return
         y := ScreenHeight - height ; Đặt vị trí y ở dưới cùng
         
         ; Đặt kích thước và vị trí cửa sổ
-        WinMove, ahk_class TkTopLevel,, x+300, y-50, width, height
+        WinMove, STT,, x+300, y-50, width, height
 
         ; Đặt độ mờ cửa sổ ban đầu (10%)
         global opacity := 50
-        WinSet, Transparent, %opacity%, ahk_class TkTopLevel
-        WinHide, ahk_class TkTopLevel ; Ẩn cửa sổ ngay sau khi mở
+        WinSet, Transparent, %opacity%, STT
+        WinHide, STT; Ẩn cửa sổ ngay sau khi mở
     }
     else
     {
@@ -253,13 +255,13 @@ return
 ; Phím tắt để mở AutoPaste ở chế độ app mode với độ mờ 10%
 ^!a:: ; Ctrl + Alt + A để mở AutoPaste
     ; Kiểm tra xem cửa sổ AutoPaste đã tồn tại chưa
-    if !WinExist("AutoPaste") ; Kiểm tra tiêu đề cửa sổ
+    if !WinExist("AutoPaste") ; Kiểm tra tiêu đề cửa sổ AutoPaste
     {
         Run, "C:\Users\anhnguyencoder\AppData\Local\Programs\Python\Python312\pythonw.exe" "D:\GitHub\Auto Paste\app.py", , Hide
         ; Chờ một chút để cửa sổ mở
         Sleep, 1000
-        ; Lấy ID của cửa sổ vừa mở
-        WinWait, ahk_class TkTopLevel ; Chờ cho cửa sổ AutoPaste mở
+        ; Lấy ID của cửa sổ AutoPaste dựa vào tiêu đề
+        WinWait, AutoPaste
         
         ; Kích thước cửa sổ
         width := 120
@@ -272,12 +274,12 @@ return
         y := ScreenHeight - height ; Đặt vị trí y ở dưới cùng
         
         ; Đặt kích thước và vị trí cửa sổ
-        WinMove, ahk_class TkTopLevel,, x-300, y-50, width, height
+        WinMove, AutoPaste,, x-300, y-50, width, height
 
         ; Đặt độ mờ cửa sổ ban đầu (10%)
         global opacity := 50
-        WinSet, Transparent, %opacity%, ahk_class TkTopLevel
-        WinHide, ahk_class TkTopLevel ; Ẩn cửa sổ ngay sau khi mở
+        WinSet, Transparent, %opacity%, AutoPaste
+        WinHide, AutoPaste; Ẩn cửa sổ ngay sau khi mở
     }
     else
     {
@@ -285,6 +287,3 @@ return
         WinActivate, AutoPaste
     }
 return
-
-
-
