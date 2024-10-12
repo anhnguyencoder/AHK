@@ -1,6 +1,4 @@
-﻿#NoTrayIcon
-
-::abi::Artificial brain implant
+﻿::abi::Artificial brain implant
 ::ai::Artificial intelligence
 ::blo::Blockchain
 ::cc::Cloud computing
@@ -10,7 +8,7 @@
 ::eva::Electronic Virtual Assistant
 ::fr::Firefighting robot
 ::hcfvrg::Hydraulic chair for virtual reality games
-::idov::Intranets dominate over Internet
+::idoi::Intranets dominate over Internet
 ::pwhm::Personal wearable health monitor
 ::tpsoofod::Terabit per second on optical fibres over distance
 ::gd::Game development
@@ -55,7 +53,7 @@
 ::rps::Route planning software
 ::sn::Satellite navigation
 ::sim::simulation
-::spr::spreadsheet
+::ss::spreadsheet
 ::ves::video editing software
 ::vs::Visual Studio
 ::wps::Word processing software
@@ -64,11 +62,11 @@
 ::dow::downsize
 ::enh::enhance
 ::kto::keep track of
-::otm::optimize
+::opt::optimize
 
 ::pre::preserve
 ::ret::retouch
-::sln::Simulate
+::sml::Simulate
 ::cw::Commercial website
 ::edw::Educational website
 ::enw::Entertainment website
@@ -100,10 +98,10 @@
 ::wc::Website content
 ::wsp::Website specification
 ::www::World Wide Web
-::ctb::Compatible
+::com::Compatible
 ::etu::Easy-to-use
 ::inter::Interactive
-::infor::informative
+::inf::informative
 ::rel::Reliable
 ::utd::Up-to-date
 ::uf::User-friendly
