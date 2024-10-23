@@ -229,7 +229,7 @@ return
         
         ; Kích thước cửa sổ
         width := 150
-        height := 160
+        height := 170
         
         ; Đặt vị trí cửa sổ ở giữa theo chiều ngang và dưới cùng theo chiều dọc
         ScreenWidth := A_ScreenWidth
@@ -265,7 +265,7 @@ return
         
         ; Kích thước cửa sổ
         width := 120
-        height := 100
+        height := 110
         
         ; Đặt vị trí cửa sổ ở giữa theo chiều ngang và dưới cùng theo chiều dọc
         ScreenWidth := A_ScreenWidth
@@ -274,7 +274,7 @@ return
         y := ScreenHeight - height ; Đặt vị trí y ở dưới cùng
         
         ; Đặt kích thước và vị trí cửa sổ
-        WinMove, AutoPaste,, x-300, y-50, width, height
+        WinMove, AutoPaste,, x-300, y-60, width, height
 
         ; Đặt độ mờ cửa sổ ban đầu (10%)
         global opacity := 50
