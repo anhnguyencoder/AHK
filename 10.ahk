@@ -243,7 +243,7 @@ return
         ; Đặt độ mờ cửa sổ ban đầu (10%)
         global opacity := 50
         WinSet, Transparent, %opacity%, STT
-        WinHide, STT; Ẩn cửa sổ ngay sau khi mở
+        WinHide, STT ; Ẩn cửa sổ ngay sau khi mở
     }
     else
     {
@@ -279,7 +279,7 @@ return
         ; Đặt độ mờ cửa sổ ban đầu (10%)
         global opacity := 50
         WinSet, Transparent, %opacity%, AutoPaste
-        WinHide, AutoPaste; Ẩn cửa sổ ngay sau khi mở
+        WinHide, AutoPaste ; Ẩn cửa sổ ngay sau khi mở
     }
     else
     {
