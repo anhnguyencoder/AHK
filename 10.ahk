@@ -233,41 +233,7 @@ return
     }
 return
 
-; Phím tắt để mở AutoPaste ở chế độ app mode với độ mờ 10%
-^!a:: ; Ctrl + Alt + A để mở AutoPaste
-    ; Kiểm tra xem cửa sổ AutoPaste đã tồn tại chưa
-    if !WinExist("AutoPaste") ; Kiểm tra tiêu đề cửa sổ AutoPaste
-    {
-        Run, "C:\Users\anhnguyencoder\AppData\Local\Programs\Python\Python312\pythonw.exe" "D:\GitHub\Auto Paste\app.py", , Hide
-        ; Chờ một chút để cửa sổ mở
-        Sleep, 1000
-        ; Lấy ID của cửa sổ AutoPaste dựa vào tiêu đề
-        WinWait, AutoPaste
-        
-        ; Kích thước cửa sổ
-        width := 120
-        height := 110
-        
-        ; Đặt vị trí cửa sổ ở giữa theo chiều ngang và dưới cùng theo chiều dọc
-        ScreenWidth := A_ScreenWidth
-        ScreenHeight := A_ScreenHeight
-        x := (ScreenWidth - width) // 2 ; Tính vị trí x để căn giữa
-        y := ScreenHeight - height ; Đặt vị trí y ở dưới cùng
-        
-        ; Đặt kích thước và vị trí cửa sổ
-        WinMove, AutoPaste,, x-300, y-60, width, height
 
-        ; Đặt độ mờ cửa sổ ban đầu (10%)
-        global opacity := 50
-        WinSet, Transparent, %opacity%, AutoPaste
-        WinHide, AutoPaste ; Ẩn cửa sổ ngay sau khi mở
-    }
-    else
-    {
-        ; Nếu cửa sổ đã mở, có thể kích hoạt nó
-        WinActivate, AutoPaste
-    }
-return
 
 
 
