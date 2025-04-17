@@ -270,8 +270,6 @@ return
 return
 
 
-!r:: ; Khi nhấn Alt + R
-Run, "C:\Program Files\Capture2Text_v4.6.3_64bit\Capture2Text\Capture2Text.exe" ; Mở Capture2Text
-return
+
 
 
