@@ -192,13 +192,7 @@ return
 
 
 
-!o:: ; Alt + O để sao chép
-    Send, ^c ; Ctrl + C để sao chép
-return
 
-!p:: ; Alt + P để dán
-    Send, ^v ; Ctrl + V để dán
-return
 
 
 ; Script để nhấp chuột vào vị trí (1200, 130) ngay lập tức khi nhấn Alt + S
