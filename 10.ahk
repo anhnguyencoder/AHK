@@ -154,21 +154,7 @@ return
 autoPasteHidden := false
 
 
-; Phím tắt để ẩn/hiện cửa sổ AutoPaste khi nhấn ALT + J
-!j:: ; ALT + j để ẩn/hiện
-    if autoPasteHidden
-    {
-        ; Sử dụng tiêu đề cửa sổ để xác định AutoPaste
-        WinShow, AutoPaste ; Hiển thị lại cửa sổ AutoPaste
-        WinActivate, AutoPaste ; Đưa cửa sổ ra phía trước
-        autoPasteHidden := false ; Cập nhật trạng thái
-    }
-    else
-    {
-        WinHide, AutoPaste ; Ẩn cửa sổ AutoPaste
-        autoPasteHidden := true ; Cập nhật trạng thái
-    }
-return
+
 
 
 ; Biến trạng thái cửa sổ STT
