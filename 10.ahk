@@ -53,7 +53,7 @@ return
         
 	 ; Kích thước cửa sổ
         width := 300
-        height := 200
+        height := 250
         
         ; Đặt vị trí cửa sổ ở giữa theo chiều ngang và dưới cùng theo chiều dọc
         ScreenWidth := A_ScreenWidth
@@ -221,7 +221,7 @@ return
     ; Kiểm tra xem cửa sổ STT đã tồn tại chưa
     if !WinExist("STT") ; Kiểm tra tiêu đề cửa sổ STT
     {
-        Run, "C:\Users\anhnguyencoder\AppData\Local\Programs\Python\Python312\pythonw.exe" "D:\GitHub\Speech-To-Text\latest version\app.py", , Hide
+        Run, "C:\Users\Anhnguyencoder\AppData\Local\Programs\Python\Python313\pythonw.exe" "D:\ANHNGUYENCODER\Speech-To-Text\latest version\app.py", , Hide
         ; Chờ một chút để cửa sổ mở
         Sleep, 1000
         ; Lấy ID của cửa sổ STT dựa vào tiêu đề
@@ -287,3 +287,10 @@ return
         WinActivate, AutoPaste
     }
 return
+
+
+!r:: ; Khi nhấn Alt + R
+Run, "C:\Program Files\Capture2Text_v4.6.3_64bit\Capture2Text\Capture2Text.exe" ; Mở Capture2Text
+return
+
+

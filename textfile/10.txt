@@ -1,0 +1,5 @@
+         # Lắng nghe sự kiện Ctrl + C toàn cục
+
+        keyboard.add_hotkey('ctrl+c', lambda: setattr(self, 'ignore_clipboard_change', False))
+
+

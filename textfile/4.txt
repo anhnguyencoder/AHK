@@ -1,0 +1,7 @@
+Trạng thái độ trong suốt:
+Kiểm soát hiển thị/ẩn cửa sổ:
+Tránh trùng phím tắt: Đảm b
+Phân tách chức năng hiển thị cửa sổ: Xác 
+Giới hạn kiểm tra clipboard: Đảm 
+
+

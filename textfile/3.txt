@@ -1,0 +1,2 @@
+ self.root.geometry("120x60")  # Kích thước cửa sổ
+
